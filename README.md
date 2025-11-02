@@ -89,6 +89,16 @@ Individual zone heating control
 
 ## Diagrams
 
+### Wiring Diagram
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/wiring-diagram.dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="images/wiring-diagram.light.png">
+  <img alt="Heating System Wiring Diagram" src="images/wiring-diagram.light.png">
+</picture>
+
+### Editable Source Files
+
 - **heating-system.drawio** - Overall system architecture showing water and electrical connections
 - **wiring-diagram.drawio** - Detailed wiring specifications and terminal connections
 
@@ -205,7 +215,19 @@ Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes
 
 ### Priority 3: Optional Improvements
 
-#### 4. Wiring Centre Consolidation
+#### 4. Smart Hub Integration (Optional)
+**Heatmiser neoHub Gen 2:**
+- Centralized control of all neoStat thermostats via smartphone app
+- Smart scheduling, geo-location, and remote access
+- Voice control (Alexa, Google Home, HomeKit)
+- Energy monitoring and usage tracking per room
+- **Requirements**: Ethernet or WiFi connection, USB 5V power (PoE not supported)
+- **Placement**: Near router, within 50m of at least one neoStat (mesh networking extends range)
+- **Cost**: £120-150
+
+**Cost:** £120-150 | **Annual Savings:** £100-200 | **Payback:** 1-2 years
+
+#### 5. Wiring Centre Consolidation
 **Alternative to direct wiring:** Heatmiser UH8 Wiring Centre
 - Centralizes all wiring in one location
 - Easier troubleshooting and maintenance
@@ -214,7 +236,7 @@ Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes
 
 **Cost:** £180-220 | **Benefit:** Convenience, not energy savings
 
-#### 5. Boiler Optimization
+#### 6. Boiler Optimization
 **Settings to Check:**
 - **CH Temperature**: Set to 60-70°C for radiators (not 80°C+)
 - **Pump Speed**: Adjust based on system resistance
