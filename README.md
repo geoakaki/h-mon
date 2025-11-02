@@ -87,12 +87,25 @@ Individual zone heating control
 - **Function**: Controls boiler operation, NOT individual zones
 - **Connectivity**: WiFi for Ariston NET app
 
+### Heatmiser neoHub Gen 2 (Recommended Addition)
+- **Connection**: Ethernet or WiFi to router
+- **Power**: USB 5V (PoE not supported, use PoE splitter if needed)
+- **RF Range**: 50m direct, unlimited via mesh networking
+- **Function**: Central smart controller for all neoStat thermostats
+- **Mesh Network**: Each neoStat acts as repeater, extends range automatically
+- **Placement**: Near router, central location, within 50m of at least one neoStat
+- **Dimensions**: 170 x 91 x 25.5mm (small, wall-mountable)
+
 ## Diagrams
 
 - **heating-system.drawio** - Overall system architecture showing water and electrical connections
 - **wiring-diagram.drawio** - Detailed wiring specifications and terminal connections
 
 Open these files with [draw.io](https://app.diagrams.net) for viewing and editing.
+
+## Installation Guides
+
+- **NEOHUB-INSTALLATION.md** - Complete guide for installing and configuring the Heatmiser neoHub Gen 2
 
 ## Cable Specifications
 
