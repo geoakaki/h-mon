@@ -1,0 +1,7 @@
+# Claude Code directory
+.claude/
+
+# Draw.io backup files
+*.drawio.bkp
+*.drawio.dtmp
+*.drawio~
