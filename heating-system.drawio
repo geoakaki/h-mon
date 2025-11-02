@@ -15,6 +15,11 @@
           <mxGeometry x="620" y="160" width="160" height="60" as="geometry" />
         </mxCell>
 
+        <!-- neoHub -->
+        <mxCell id="neohub" value="Heatmiser neoHub Gen 2&#xa;Smart Central Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="850" y="160" width="160" height="60" as="geometry" />
+        </mxCell>
+
         <!-- Connection: Boiler to Thermostat (Water) -->
         <mxCell id="conn-boiler-thermostat" value="Water" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#0066CC;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="boiler" target="boiler-thermostat">
           <mxGeometry width="50" height="50" relative="1" as="geometry" />
@@ -155,6 +160,14 @@
           </mxGeometry>
         </mxCell>
 
+        <!-- RF Wireless Connection -->
+        <mxCell id="legend-rf" value="RF Wireless (868MHz)" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;strokeColor=#82b366;dashed=1;dashPattern=8 8;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="780" as="sourcePoint" />
+            <mxPoint x="130" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
         <!-- Component Legend -->
         <mxCell id="legend-components-title" value="Components" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="300" y="720" width="120" height="30" as="geometry" />
@@ -167,6 +180,9 @@
         </mxCell>
         <mxCell id="legend-actuators" value="• 6 Actuators: Heatmiser TA230 (230V, Normally Closed)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="300" y="800" width="400" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-neohub" value="• neoHub Gen 2: Smart central controller (RF wireless to all neoStats)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="825" width="400" height="20" as="geometry" />
         </mxCell>
 
         <!-- Notes -->
