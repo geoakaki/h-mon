@@ -17,7 +17,7 @@ This repository contains documentation and monitoring tools for a multi-zone rad
 - **Bathroom Control**: Manual or always-on (no thermostats)
 
 ### Distribution
-- **Manifold**: Henco UFH-0605MDSS0X stainless steel manifold (6 zones)
+- **Manifold**: Henco UFH-0605MDSS0X stainless steel manifold with flow meters (6 zones, 0-5 L/min per zone)
 - **Actuators**: Heatmiser TA230 (230V AC, normally closed, 2-wire)
 
 ### Radiators
@@ -153,58 +153,7 @@ TA230 Actuator
 
 ### Priority 1: High Impact Improvements
 
-#### 1. Manifold Flow Balancing
-**Why Needed:**
-- Different room sizes require different flow rates
-- Prevents some rooms being too hot while others are too cold
-- Optimizes radiator efficiency and energy usage
-- Ensures balanced heat distribution across all zones
-
-**Check Your Manifold:**
-Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes showing flow rate 0-5 L/min).
-
-**If Flow Meters Missing - What to Buy:**
-- **Product**: Replacement Flow Meters (compatible with Henco manifolds)
-- **Thread Size**: 1/2" MBSP (check your manifold - may be 3/8")
-- **Range**: 0-5 L/min
-- **Quantity**: 6 units (one per zone)
-- **Cost**: £8-15 per unit | Total: £48-90
-- **Where to Buy**:
-  - Underfloor heating specialists
-  - Amazon (search "Henco manifold flow meter")
-  - Compatible brands: Watts, Myson, Prowarm, Rehau
-
-**How to Balance (If You Have Flow Meters):**
-1. **Identify longest pipe loop** (furthest room) - open 100%
-2. **Adjust each zone** by turning black adjustment screw:
-   - Clockwise = decrease flow
-   - Anti-clockwise = increase flow
-   - No tools needed - adjust by hand
-3. **Read flow rate** in glass tube
-4. **Target flow rates:**
-   - Large Room (20m²): 2-3 L/min
-   - Medium Room (15m²): 1.5-2 L/min
-   - Small Room (10m²): 1-1.5 L/min
-   - Bathroom (5m²): 0.8-1.2 L/min
-5. **Target temperature drop:** 7-10°C across each loop
-
-**Cost:** £0 (if meters exist) or £48-90 (new meters) | **Annual Savings:** £80-150 | **Payback:** Immediate
-
-### Priority 2: Recommended Upgrades
-
-#### 2. Add Bathroom Thermostats
-**Current Issue:** Bathrooms lack individual temperature control
-
-**Solutions:**
-- Add 2x neoStat v2 for bathrooms (full smart control)
-- Add timer switches (cheaper, less precise)
-- Wire to main boiler schedule (basic control)
-
-**Best Option:** Add neoStats for comfort + energy savings
-
-**Cost:** £200 | **Annual Savings:** £60-100 | **Payback:** 2-3 years
-
-#### 3. Floor Temperature Sensors
+#### 1. Floor Temperature Sensors
 **For rooms with tile/stone floors:**
 - Connects to neoStat RT1/RT2 terminals
 - 10kΩ NTC thermistor sensors
@@ -213,9 +162,9 @@ Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes
 
 **Cost:** £60-100 (4 sensors) | **Annual Savings:** £40-60 | **Payback:** 2 years
 
-### Priority 3: Optional Improvements
+### Priority 2: Optional Improvements
 
-#### 4. Smart Hub Integration (Optional)
+#### 2. Smart Hub Integration (Optional)
 **Heatmiser neoHub Gen 2:**
 - Centralized control of all neoStat thermostats via smartphone app
 - Smart scheduling, geo-location, and remote access
@@ -227,7 +176,7 @@ Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes
 
 **Cost:** £120-150 | **Annual Savings:** £100-200 | **Payback:** 1-2 years
 
-#### 5. Wiring Centre Consolidation
+#### 3. Wiring Centre Consolidation
 **Alternative to direct wiring:** Heatmiser UH8 Wiring Centre
 - Centralizes all wiring in one location
 - Easier troubleshooting and maintenance
@@ -236,7 +185,7 @@ Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes
 
 **Cost:** £180-220 | **Benefit:** Convenience, not energy savings
 
-#### 6. Boiler Optimization
+#### 4. Boiler Optimization
 **Settings to Check:**
 - **CH Temperature**: Set to 60-70°C for radiators (not 80°C+)
 - **Pump Speed**: Adjust based on system resistance
@@ -246,25 +195,22 @@ Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes
 ## Optimization Action Plan
 
 ### Immediate (Do Now)
-1. ✅ **Check if flow meters exist** on your Henco manifold
-2. ✅ **Purchase flow meters** if missing (£48-90 for 6 units)
-3. ✅ **Balance manifold** flow rates per zone
-4. ✅ **Optimize boiler settings** (temperature, pump speed)
+1. ✅ **Optimize boiler settings** (temperature, pump speed)
+2. ✅ **Balance manifold** flow rates using built-in flow meters
 
 ### Short Term (1-3 months)
-5. 🎯 Add bathroom thermostats for complete zone control
-6. ⚙️ Install floor sensors (if tile/stone floors)
+3. ⚙️ Install floor sensors (if tile/stone floors)
 
 ### Long Term (Future)
-7. 🔧 Consider wiring centre during major rewiring
-8. 💰 Monitor and optimize based on usage data
+4. 🔧 Consider smart hub integration for remote control
+5. 🔧 Consider wiring centre during major rewiring
+6. 💰 Monitor and optimize based on usage data
 
 ## Cost-Benefit Summary
 
 | Upgrade | Cost | Annual Savings | Payback Period | Priority |
 |---------|------|----------------|----------------|----------|
-| Flow Meters + Balancing | £0-90 | £80-150 | Immediate | **HIGH** |
-| Bathroom Thermostats | £200 | £60-100 | 2-3 years | Medium |
-| Floor Sensors | £60-100 | £40-60 | 2 years | Medium |
-| Wiring Centre | £180-220 | N/A | N/A | Low |
+| Floor Sensors | £60-100 | £40-60 | 2 years | **HIGH** |
 | Boiler Optimization | £0 | £50-100 | Immediate | **HIGH** |
+| Smart Hub (neoHub) | £120-150 | £100-200 | 1-2 years | Medium |
+| Wiring Centre | £180-220 | N/A | N/A | Low |
