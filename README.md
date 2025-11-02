@@ -87,25 +87,12 @@ Individual zone heating control
 - **Function**: Controls boiler operation, NOT individual zones
 - **Connectivity**: WiFi for Ariston NET app
 
-### Heatmiser neoHub Gen 2 (Recommended Addition)
-- **Connection**: Ethernet or WiFi to router
-- **Power**: USB 5V (PoE not supported, use PoE splitter if needed)
-- **RF Range**: 50m direct, unlimited via mesh networking
-- **Function**: Central smart controller for all neoStat thermostats
-- **Mesh Network**: Each neoStat acts as repeater, extends range automatically
-- **Placement**: Near router, central location, within 50m of at least one neoStat
-- **Dimensions**: 170 x 91 x 25.5mm (small, wall-mountable)
-
 ## Diagrams
 
 - **heating-system.drawio** - Overall system architecture showing water and electrical connections
 - **wiring-diagram.drawio** - Detailed wiring specifications and terminal connections
 
 Open these files with [draw.io](https://app.diagrams.net) for viewing and editing.
-
-## Installation Guides
-
-- **NEOHUB-INSTALLATION.md** - Complete guide for installing and configuring the Heatmiser neoHub Gen 2
 
 ## Cable Specifications
 
@@ -156,37 +143,46 @@ TA230 Actuator
 
 ### Priority 1: High Impact Improvements
 
-#### 1. Add Heatmiser neoHub Gen 2
-**Benefits:**
-- Centralized control of all thermostats via smartphone app
-- Smart scheduling with profiles applicable to multiple zones
-- Geo-location: auto off when leaving, auto on when returning
-- Energy monitoring and usage tracking per room
-- Voice control (Alexa, Google Home, HomeKit compatible)
-- Remote access from anywhere
-- Supports up to 32 zones for future expansion
-
-**Cost:** £120-150 | **Annual Savings:** £100-200 | **Payback:** 1-2 years
-
-#### 2. Manifold Flow Balancing
+#### 1. Manifold Flow Balancing
 **Why Needed:**
 - Different room sizes require different flow rates
 - Prevents some rooms being too hot while others are too cold
 - Optimizes radiator efficiency and energy usage
+- Ensures balanced heat distribution across all zones
 
-**Recommended Flow Rates:**
-- Large Room (20m²): 2-3 L/min
-- Medium Room (15m²): 1.5-2 L/min
-- Small Room (10m²): 1-1.5 L/min
-- Bathroom (5m²): 0.8-1.2 L/min
+**Check Your Manifold:**
+Your Henco UFH-0605MDSS0X manifold should have built-in flow meters (glass tubes showing flow rate 0-5 L/min).
 
-**Target:** 7-10°C temperature drop across each loop
+**If Flow Meters Missing - What to Buy:**
+- **Product**: Replacement Flow Meters (compatible with Henco manifolds)
+- **Thread Size**: 1/2" MBSP (check your manifold - may be 3/8")
+- **Range**: 0-5 L/min
+- **Quantity**: 6 units (one per zone)
+- **Cost**: £8-15 per unit | Total: £48-90
+- **Where to Buy**:
+  - Underfloor heating specialists
+  - Amazon (search "Henco manifold flow meter")
+  - Compatible brands: Watts, Myson, Prowarm, Rehau
 
-**Cost:** £0-50 (DIY) | **Annual Savings:** £80-150 | **Payback:** Immediate
+**How to Balance (If You Have Flow Meters):**
+1. **Identify longest pipe loop** (furthest room) - open 100%
+2. **Adjust each zone** by turning black adjustment screw:
+   - Clockwise = decrease flow
+   - Anti-clockwise = increase flow
+   - No tools needed - adjust by hand
+3. **Read flow rate** in glass tube
+4. **Target flow rates:**
+   - Large Room (20m²): 2-3 L/min
+   - Medium Room (15m²): 1.5-2 L/min
+   - Small Room (10m²): 1-1.5 L/min
+   - Bathroom (5m²): 0.8-1.2 L/min
+5. **Target temperature drop:** 7-10°C across each loop
+
+**Cost:** £0 (if meters exist) or £48-90 (new meters) | **Annual Savings:** £80-150 | **Payback:** Immediate
 
 ### Priority 2: Recommended Upgrades
 
-#### 3. Add Bathroom Thermostats
+#### 2. Add Bathroom Thermostats
 **Current Issue:** Bathrooms lack individual temperature control
 
 **Solutions:**
@@ -198,7 +194,7 @@ TA230 Actuator
 
 **Cost:** £200 | **Annual Savings:** £60-100 | **Payback:** 2-3 years
 
-#### 4. Floor Temperature Sensors
+#### 3. Floor Temperature Sensors
 **For rooms with tile/stone floors:**
 - Connects to neoStat RT1/RT2 terminals
 - 10kΩ NTC thermistor sensors
@@ -209,7 +205,7 @@ TA230 Actuator
 
 ### Priority 3: Optional Improvements
 
-#### 5. Wiring Centre Consolidation
+#### 4. Wiring Centre Consolidation
 **Alternative to direct wiring:** Heatmiser UH8 Wiring Centre
 - Centralizes all wiring in one location
 - Easier troubleshooting and maintenance
@@ -218,43 +214,35 @@ TA230 Actuator
 
 **Cost:** £180-220 | **Benefit:** Convenience, not energy savings
 
-#### 6. Boiler Optimization
+#### 5. Boiler Optimization
 **Settings to Check:**
 - **CH Temperature**: Set to 60-70°C for radiators (not 80°C+)
 - **Pump Speed**: Adjust based on system resistance
 - **Weather Compensation**: Enable if available (10-15% savings)
 - **Anti-Cycling**: Set minimum run times
 
-### Priority 4: Smart Home Integration
-
-**Options:**
-- Home Assistant integration (Ariston + Heatmiser)
-- IFTTT automation linking heating to other devices
-- Energy monitoring tracking actual usage vs schedules
-
 ## Optimization Action Plan
 
 ### Immediate (Do Now)
-1. ✅ Balance manifold flow rates per zone
-2. ✅ Check and optimize boiler temperature settings
-3. ✅ Document current cable runs
+1. ✅ **Check if flow meters exist** on your Henco manifold
+2. ✅ **Purchase flow meters** if missing (£48-90 for 6 units)
+3. ✅ **Balance manifold** flow rates per zone
+4. ✅ **Optimize boiler settings** (temperature, pump speed)
 
 ### Short Term (1-3 months)
-4. 🎯 Install Heatmiser neoHub for smart control
 5. 🎯 Add bathroom thermostats for complete zone control
 6. ⚙️ Install floor sensors (if tile/stone floors)
 
 ### Long Term (Future)
 7. 🔧 Consider wiring centre during major rewiring
-8. 📊 Set up home automation integration
-9. 💰 Monitor and optimize based on usage data
+8. 💰 Monitor and optimize based on usage data
 
 ## Cost-Benefit Summary
 
 | Upgrade | Cost | Annual Savings | Payback Period | Priority |
 |---------|------|----------------|----------------|----------|
-| neoHub | £120-150 | £100-200 | 1-2 years | **HIGH** |
-| Manifold Balancing | £0-50 | £80-150 | Immediate | **HIGH** |
-| Bathroom Stats | £200 | £60-100 | 2-3 years | Medium |
+| Flow Meters + Balancing | £0-90 | £80-150 | Immediate | **HIGH** |
+| Bathroom Thermostats | £200 | £60-100 | 2-3 years | Medium |
 | Floor Sensors | £60-100 | £40-60 | 2 years | Medium |
 | Wiring Centre | £180-220 | N/A | N/A | Low |
+| Boiler Optimization | £0 | £50-100 | Immediate | **HIGH** |
