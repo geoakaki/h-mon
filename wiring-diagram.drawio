@@ -1,0 +1,243 @@
+<mxfile host="app.diagrams.net" modified="2025-11-02T00:00:00.000Z" agent="draw.io" version="24.0.0" etag="wiring-diagram-v1">
+  <diagram name="Detailed Wiring Diagram" id="wiring-diagram">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Heating System - Detailed Wiring Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="20" width="400" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Main 230V Supply -->
+        <mxCell id="mains" value="230V AC MAINS SUPPLY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="80" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Ariston Boiler -->
+        <mxCell id="boiler" value="Ariston Alteas ONE Net&#xa;30 kW Combi Boiler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="180" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Ariston Cube S Net -->
+        <mxCell id="cube-thermostat" value="Ariston Cube S Net&#xa;(Main Boiler Control)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="280" y="180" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- BUS Connection -->
+        <mxCell id="bus-conn" value="BUS (2-wire)&#xa;BridgeNet Protocol" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;strokeColor=#CC6600;" edge="1" parent="1" source="boiler" target="cube-thermostat">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Manifold -->
+        <mxCell id="manifold" value="Henco UFH-0605MDSS0X&#xa;Stainless Steel Manifold&#xa;(6 Zones)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="180" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Water connection from boiler to manifold -->
+        <mxCell id="water-conn" value="Hot Water Supply/Return" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=4;strokeColor=#0066CC;" edge="1" parent="1" source="boiler" target="manifold">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Power from mains to boiler -->
+        <mxCell id="mains-boiler" value="230V" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#000000;" edge="1" parent="1" source="mains" target="boiler">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Power from mains to cube -->
+        <mxCell id="mains-cube" value="230V" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#000000;" edge="1" parent="1" source="mains" target="cube-thermostat">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Zone 1: Room 1 -->
+        <mxCell id="zone1-label" value="ZONE 1 - ROOM 1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="320" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room1-thermostat" value="Heatmiser neoStat v2&#xa;Room 1 Thermostat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="50" y="360" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room1-terminals" value="Terminals:&#xa;L = Live In&#xa;N = Neutral In&#xa;A1 = Switched Live Out&#xa;A2 = Common Out" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="200" y="360" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room1-actuator" value="TA230 Actuator&#xa;Zone 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="360" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room1-actuator-terminals" value="2-Wire:&#xa;Wire 1 (L)&#xa;Wire 2 (N)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="500" y="360" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room1-radiator" value="Radiator&#xa;Room 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="620" y="360" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Wiring connections Zone 1 -->
+        <mxCell id="room1-power-in" value="L, N" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="740" y="130" as="sourcePoint" />
+            <mxPoint x="120" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="740" y="300" />
+              <mxPoint x="120" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="room1-switched" value="A1 (Switched L)" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#FF6600;dashed=1;exitX=1;exitY=0.3;entryX=0;entryY=0.3;" edge="1" parent="1" source="room1-thermostat" target="room1-actuator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room1-neutral" value="A2/N" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0000FF;dashed=1;exitX=1;exitY=0.7;entryX=0;entryY=0.7;" edge="1" parent="1" source="room1-thermostat" target="room1-actuator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room1-water" value="Water" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#0066CC;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="manifold" target="room1-radiator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="room1-actuator-mount" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;dashPattern=1 2;" edge="1" parent="1" source="room1-actuator" target="room1-radiator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="room1-mount-label" value="Controls" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="580" y="375" width="40" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Zone 2: Room 2 (Simplified) -->
+        <mxCell id="zone2-label" value="ZONE 2 - ROOM 2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="460" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room2-setup" value="neoStat v2 → TA230 → Radiator (Same wiring as Zone 1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="50" y="490" width="670" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Zone 3: Room 3 (Simplified) -->
+        <mxCell id="zone3-label" value="ZONE 3 - ROOM 3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="550" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room3-setup" value="neoStat v2 → TA230 → Radiator (Same wiring as Zone 1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="50" y="580" width="670" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Zone 4: Room 4 (Simplified) -->
+        <mxCell id="zone4-label" value="ZONE 4 - ROOM 4" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="640" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="room4-setup" value="neoStat v2 → TA230 → Radiator (Same wiring as Zone 1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="50" y="670" width="670" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Zone 5: Bathroom 1 -->
+        <mxCell id="zone5-label" value="ZONE 5 - BATHROOM 1 (No Thermostat)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="730" width="350" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bath1-setup" value="Always-On / Manual Control → TA230 → Bathroom Radiator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="50" y="760" width="670" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Zone 6: Bathroom 2 -->
+        <mxCell id="zone6-label" value="ZONE 6 - BATHROOM 2 (No Thermostat)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="820" width="350" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bath2-setup" value="Always-On / Manual Control → TA230 → Bathroom Radiator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="50" y="850" width="670" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Wiring Details Box -->
+        <mxCell id="wiring-details-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="800" y="320" width="750" height="570" as="geometry" />
+        </mxCell>
+
+        <mxCell id="wiring-title" value="WIRING SPECIFICATIONS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="800" y="330" width="750" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- neoStat v2 Details -->
+        <mxCell id="neostat-title" value="Heatmiser neoStat v2 Terminals" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="820" y="370" width="710" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="neostat-details" value="Terminal Connections:&#xa;• L (Live) - Connect to 230V AC Live supply&#xa;• N (Neutral) - Connect to 230V AC Neutral supply&#xa;• A1 - Switched Live output (230V when heating demanded)&#xa;• A2 - Common/Neutral output for actuator&#xa;• RT1, RT2 - Optional floor sensor connections (10kΩ NTC thermistor)&#xa;&#xa;Operation:&#xa;When thermostat calls for heat, it switches 230V to A1 terminal.&#xa;A2 acts as return path (neutral) for the actuator circuit.&#xa;&#xa;Specifications:&#xa;• Supply: 230V AC, 50Hz&#xa;• Max switching: 16A (resistive), 3A (inductive)&#xa;• Wireless: RF 868MHz for neoHub communication" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;spacingLeft=10;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="405" width="710" height="165" as="geometry" />
+        </mxCell>
+
+        <!-- TA230 Actuator Details -->
+        <mxCell id="actuator-title" value="Heatmiser TA230 Thermal Actuator" style="text;html=1;strokeColor=none;fillColor=#e1d5e7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="820" y="585" width="710" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actuator-details" value="Terminal Connections (2-Wire):&#xa;• Wire 1 - Live (from neoStat A1)&#xa;• Wire 2 - Neutral (from neoStat A2 or common neutral)&#xa;&#xa;Operation:&#xa;• Normally Closed (NC) - Valve is CLOSED when no power applied&#xa;• When 230V applied: Motor opens valve in ~3 minutes&#xa;• When power removed: Spring returns valve to closed position&#xa;• LED indicator shows power status&#xa;&#xa;Specifications:&#xa;• Supply: 230V AC, 50Hz&#xa;• Power Consumption: 2W&#xa;• Stroke Length: 3.5mm ±0.5mm&#xa;• Connection: M30 x 1.5 thread (fits manifold valve)&#xa;• Response Time: ~3 minutes to fully open&#xa;&#xa;Installation:&#xa;Mounted directly on manifold return port. Each zone requires one actuator." style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;spacingLeft=10;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="620" width="710" height="210" as="geometry" />
+        </mxCell>
+
+        <!-- Ariston Cube S Net Details -->
+        <mxCell id="cube-title" value="Ariston Cube S Net Thermostat" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="820" y="845" width="710" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cube-details" value="Connection:&#xa;• 2-Wire BUS connection to Ariston Alteas ONE Net boiler&#xa;• Uses proprietary BridgeNet protocol (NOT OpenTherm)&#xa;• Controls boiler operation, temperature setpoint, and scheduling&#xa;• Does NOT directly control zone actuators&#xa;• WiFi enabled for remote control via Ariston NET app&#xa;&#xa;Function:&#xa;The Cube S Net acts as the main controller for the boiler system.&#xa;Individual room thermostats (neoStat v2) control their respective zones independently." style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;spacingLeft=10;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="880" width="710" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-title" value="CONNECTION LEGEND" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="940" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-water" value="Water Flow (Hot/Cold)" style="endArrow=classic;html=1;strokeWidth=4;strokeColor=#0066CC;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="980" as="sourcePoint" />
+            <mxPoint x="150" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="legend-power" value="230V Power Supply" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="1010" as="sourcePoint" />
+            <mxPoint x="150" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="legend-switched" value="Switched Live (Control)" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#FF6600;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="1040" as="sourcePoint" />
+            <mxPoint x="150" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="legend-bus" value="BUS Connection (Data)" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;strokeColor=#CC6600;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="1070" as="sourcePoint" />
+            <mxPoint x="150" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Important Notes -->
+        <mxCell id="notes-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="940" width="450" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="notes-title2" value="⚠️ IMPORTANT INSTALLATION NOTES" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="945" width="450" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="notes-content" value="1. All electrical work must be performed by a qualified electrician&#xa;2. Disconnect power before any wiring work&#xa;3. Each neoStat requires dedicated 230V supply (L + N)&#xa;4. TA230 actuators are normally closed - valve opens when powered&#xa;5. Bathroom zones may require always-on power or manual switching&#xa;6. All connections must comply with local electrical regulations&#xa;7. Test each zone independently after installation&#xa;8. Ensure proper earth/ground connections throughout" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=9;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="305" y="980" width="440" height="95" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
