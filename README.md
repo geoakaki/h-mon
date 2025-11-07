@@ -13,32 +13,33 @@ This repository contains documentation and monitoring tools for a multi-zone rad
 
 ### Control Systems
 - **Boiler Controller**: Ariston Cube S Net (WiFi-enabled, controls boiler via BUS)
-- **Room Thermostats**: Heatmiser neoStat v2 (one per room zone, 4 total)
-- **Bathroom Control**: Manual or always-on (no thermostats)
+- **Wiring Centre**: Heatmiser UH4 (4-zone, 230V, up to 6 actuators per zone)
+- **Room Thermostats**: Heatmiser neoStat v2 (3 units for radiator zones + 1 for UFH zone)
 
 ### Distribution
-- **Manifold**: Henco UFH-0605MDSS0X stainless steel manifold with flow meters (6 zones, 0-5 L/min per zone)
+- **Manifold**: Henco UFH-0605MDSS0X stainless steel manifold with flow meters (4 zones, 0-5 L/min per zone)
 - **Actuators**: Heatmiser TA230 (230V AC, normally closed, 2-wire)
 
-### Radiators
-- **Room Radiators**: Stelrad Classic Compact Panel Radiators (4 units)
-- **Bathroom Radiators**: Standard bathroom radiators (2 units)
+### Heating Output
+- **Radiators**: Stelrad Classic Compact Panel Radiators (3 zones)
+- **Underfloor Heating**: 1 zone with underfloor heating circuits
 
 ## Zone Configuration
 
-The system manages 6 independent heating zones:
+The system manages 4 independent heating zones:
 
-### Room Zones (4 zones with thermostats)
-Each room zone includes:
+### Zone 1-3: Radiator Zones (with thermostats)
+Each radiator zone includes:
 - Heatmiser neoStat v2 room thermostat
 - Heatmiser TA230 actuator on manifold
 - Stelrad Classic Compact Panel Radiator
+- Connected to UH4 wiring centre (Zones 1-3)
 
-### Bathroom Zones (2 zones without thermostats)
-Each bathroom zone includes:
-- Heatmiser TA230 actuator on manifold
-- Bathroom radiator
-- Manual or always-on control
+### Zone 4: Underfloor Heating Zone (with thermostat)
+- Heatmiser neoStat v2 room thermostat
+- Multiple Heatmiser TA230 actuators on manifold (for UFH circuits)
+- Underfloor heating loops
+- Connected to UH4 wiring centre (Zone 4)
 
 ## System Architecture
 
@@ -46,46 +47,75 @@ Each bathroom zone includes:
 ```
 Ariston Alteas ONE Net Boiler
     ↓ (hot water supply/return)
-Henco Stainless Steel Manifold
-    ↓ (6 independent circuits)
-6x TA230 Actuators (mounted on manifold)
+Henco Stainless Steel Manifold (4 zones)
+    ↓ (4 independent circuits)
+TA230 Actuators (mounted on manifold)
     ↓ (controlled water flow)
-4x Room Radiators + 2x Bathroom Radiators
+Zone 1-3: Radiators (Stelrad Classic Compact Panel)
+Zone 4: Underfloor Heating Loops
 ```
 
 ### Electrical Control
 ```
 230V AC Mains Supply
     ↓
-Ariston Cube S Net ←→ Boiler (BUS connection)
+Heatmiser UH4 Wiring Centre (4 zones)
     ↓
-4x neoStat v2 Thermostats (rooms only)
-    ↓ (switched 230V control)
-6x TA230 Actuators
+4x neoStat v2 Thermostats (Zone 1-4)
+    ↓ (switched 230V control via UH4)
+TA230 Actuators (1 per radiator zone, multiple for UFH zone)
     ↓ (open/close manifold valves)
 Individual zone heating control
+
+Ariston Cube S Net ←→ Boiler (BUS connection)
+    ↑
+UH4 Volt-Free Output (boiler call for heat)
 ```
 
 ## Wiring Details
 
+### Heatmiser UH4 Wiring Centre
+**Power Supply:**
+- **L** - Live input (230V AC, fused at 5A)
+- **N** - Neutral input
+
+**Zone Connections (4 zones):**
+- **Zone 1-4 Thermostat Inputs**: L, N, Call (from neoStat)
+- **Zone 1-4 Actuator Outputs**: Live and Neutral (230V, 3A max per zone)
+- Each zone can connect up to 6 actuators
+
+**Boiler Control:**
+- **Volt-Free Output**: 2-wire connection to Cube S Net or boiler
+- **Function**: Triggers boiler when any zone calls for heat
+
+**System Connections:**
+- **Pump**: Optional 230V pump control output
+- **Hot Water**: Optional cylinder thermostat input
+
+**Specifications:**
+- Total Load: 5A maximum
+- Dimensions: 384 x 148 x 60mm
+- IP20 protection
+- DIN rail or wall mountable
+
 ### Heatmiser neoStat v2 Connections
 - **L** - Live input (230V AC)
 - **N** - Neutral input
-- **A1** - Switched Live output (to actuator)
-- **A2** - Common/Neutral output (to actuator)
-- **RT1, RT2** - Optional floor sensor (10kΩ NTC)
+- **Call** - Switched output to UH4 wiring centre
+- **RT1, RT2** - Optional floor sensor (10kΩ NTC, for UFH zone)
 
 ### Heatmiser TA230 Actuator
-- **2-Wire Connection**: Live and Neutral from thermostat
+- **2-Wire Connection**: Live and Neutral from UH4 zone output
 - **Operation**: Normally Closed (NC) - opens when 230V applied
 - **Response Time**: ~3 minutes to fully open
-- **Mounting**: M30 x 1.5 thread on manifold return port
+- **Mounting**: M30 x 1.5 thread on manifold port
 
 ### Ariston Cube S Net
 - **Connection**: 2-wire BUS to boiler
 - **Protocol**: BridgeNet (proprietary, not OpenTherm)
-- **Function**: Controls boiler operation, NOT individual zones
+- **Function**: Controls boiler operation based on UH4 call for heat
 - **Connectivity**: WiFi for Ariston NET app
+- **Input from UH4**: Volt-free contacts trigger boiler demand
 
 ## Diagrams
 
@@ -106,29 +136,43 @@ Open these files with [draw.io](https://app.diagrams.net) for viewing and editin
 
 ## Cable Specifications
 
-### Power Supply to Thermostats
-- **Cable Type**: 2-core + earth (Twin & Earth)
-- **Size**: 2.5mm² or 1.5mm²
+### Power Supply to UH4 Wiring Centre
+- **Cable Type**: 3-core + earth (Twin & Earth)
+- **Size**: 2.5mm²
 - **Cores**: Live (Brown), Neutral (Blue), Earth (Green/Yellow)
+- **Protection**: 5A fuse or MCB
 - **Standard**: BS 6004 or equivalent
 
-### Thermostat to Actuator
-- **Cable Type**: 2-core cable
+### Thermostats to UH4 Wiring Centre
+- **Cable Type**: 3-core cable
 - **Size**: 0.75mm² to 1.5mm²
 - **Cores**:
-  - Wire 1: Switched Live from A1
-  - Wire 2: Neutral/Common from A2
-- **Max Length**: Up to 50m (low current - 2W per actuator)
+  - Wire 1: Live (L)
+  - Wire 2: Neutral (N)
+  - Wire 3: Call/Switched Live
+- **Max Length**: Up to 50m
+
+### UH4 to Actuators
+- **Cable Type**: 2-core cable
+- **Size**: 0.75mm² to 1.5mm²
+- **Cores**: Live and Neutral (230V zone output)
+- **Max Length**: Up to 50m
+- **Load**: 2W per actuator, max 6 actuators per zone
+
+### UH4 to Boiler (Volt-Free)
+- **Cable Type**: 2-core cable
+- **Size**: 0.5mm² to 1.0mm²
+- **Connection**: Volt-free contacts to Cube S Net input
+- **Max Length**: Up to 100m (low voltage signal)
 
 ### Recommended Cable Setup
 ```
 Mains 230V Supply
-    ↓ (2.5mm² Twin & Earth)
-[Junction Box]
-    ↓ (1.5mm² Twin & Earth)
-neoStat v2 Thermostat
-    ↓ (0.75-1.5mm² 2-core)
-TA230 Actuator
+    ↓ (2.5mm² Twin & Earth, 5A fused)
+Heatmiser UH4 Wiring Centre
+    ├─ (0.75-1.5mm² 3-core) → 4x neoStat v2 Thermostats
+    ├─ (0.75-1.5mm² 2-core) → TA230 Actuators (4 zones)
+    └─ (0.5-1.0mm² 2-core) → Ariston Cube S Net (volt-free)
 ```
 
 ## Important Notes
@@ -143,11 +187,12 @@ TA230 Actuator
 - Keep low voltage and mains cables separated
 
 **System Operation**
-- Room thermostats independently control their zones
-- When thermostat calls for heat, it provides 230V to actuator
-- Actuator opens manifold valve, allowing hot water to radiator
-- Cube S Net manages overall boiler operation and scheduling
-- Bathroom zones may require manual switching or timer control
+- Room thermostats (neoStat v2) independently control their zones
+- When thermostat calls for heat, it sends signal to UH4 wiring centre
+- UH4 provides 230V to zone actuator(s), opening manifold valve
+- Hot water flows to radiator (Zones 1-3) or UFH loops (Zone 4)
+- UH4 volt-free output signals Cube S Net to activate boiler
+- Cube S Net manages overall boiler operation via BridgeNet protocol
 
 ## System Optimization Recommendations
 
