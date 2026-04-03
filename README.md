@@ -45,9 +45,11 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 
 | # | Device | Qty | Status |
 |---|--------|-----|--------|
-| 3 | Heatmiser UH8-N — 8 Zone 12V Wiring Centre | 1 | Have |
-| 4 | Heatmiser neoStat 12V V3 — Smart Thermostat | 4 | Have |
-| 5 | Heatmiser neoHub G3 — Smart Hub | 1 | Have |
+| 3 | Heatmiser UH8-N — 8 Zone 12V Wiring Centre | 1 | [Have](https://heatmisershop.co.uk/heatmiser-uh8-n-8-zone-12v-wiring-centre/) |
+| 4 | Heatmiser neoStat 12V V3 — Smart Thermostat | 4 | [Have](https://heatmisershop.co.uk/imi-heatmiser-neostat-12v-v3-smart-thermostat) |
+| 5 | Heatmiser neoHub G3 — Smart Hub | 1 | [Have](https://heatmisershop.co.uk/imi-heatmiser-neohub-g3) |
+| 6 | Heatmiser TA230 — Thermo-electric Actuator, 230V NC, M30x1.5 | 10 | [Have](https://heatmisershop.co.uk/underfloor-heating-actuator-heatmiser-ta230/) |
+| 7 | Heatmiser F-PROBE — Floor Temperature Sensor, 10k NTC | 1 | [Have](https://heatmisershop.co.uk/remote-sensor-probe-3m/) |
 
 **Heatmiser UH8-N** — Central wiring hub that connects all thermostats and controls all actuators. Accepts 230V mains input and provides 12V power to up to 8 neoStat thermostats. When a thermostat calls for heat, the UH8-N switches 230V to the corresponding zone actuator on the manifold. Only zones 1-4 are used (3 bedrooms + 1 studio UFH); bathrooms are direct-plumbed with TRVs and don't use UH8-N zones. The volt-free Heat Enable output (LS/E/LR terminals) signals the Ariston Clas ONE System boiler to fire whenever any zone demands heat. The DHW combi boiler operates independently and does not need a UH8-N connection. Has dedicated UFH pump and UFH valve outputs for underfloor heating zones. Zone 8 has a RAD/UFH switch — set to UFH to enable pump and valve control for the studio's underfloor circuit. Wiring follows the "UH8-N – neoStat-12v and Hot Water Zone" diagram from the UH8-N manual.
 
@@ -59,25 +61,21 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 
 | # | Device | Qty | Status |
 |---|--------|-----|--------|
-| 6 | Giacomini R559NY005 — Mixing Group, 5 circuits | 1 | To Buy |
-| 7 | Giacomini R553ZY005 — Brass Manifold, 5 outlets | 1 | To Buy |
-| 8 | Heatmiser TA230 — Thermo-electric Actuator, 230V NC, M30x1.5 | 10 | To Buy |
-| 9 | Giacomini R500Y222 — Flush-mount Cabinet | 1 | To Buy |
-| 10 | Giacomini R179AM — Pipe Adapters, Base 18 (16x2mm) | 20 | To Buy |
+| 8 | Giacomini R559NY005 — Mixing Group, 5 circuits | 1 | To Buy |
+| 9 | Giacomini R553ZY005 — Brass Manifold, 5 outlets | 1 | To Buy |
+| 10 | Giacomini R500Y222 — Flush-mount Cabinet | 1 | To Buy |
+| 11 | Giacomini R179AM — Pipe Adapters, Base 18 (16x2mm) | 20 | To Buy |
 
 ### UFH Components
 
 | # | Device | Qty | Status |
 |---|--------|-----|--------|
-| 11 | Grundfos UPM3 25-75 130 — UFH Circulation Pump, 230V | 1 | To Buy |
-| 12 | Honeywell V4043H — 2-Port Zone Valve with Endswitch, 230V, 22mm | 1 | To Buy |
-| 13 | Heatmiser F-PROBE — Floor Temperature Sensor, 10k NTC | 1 | To Buy |
+| 12 | Grundfos UPM3 25-75 130 — UFH Circulation Pump, 230V | 1 | [To Buy](https://product-selection.grundfos.com/us/products/upm3-upm4-oem/upm3-oem/upm3-59C90802) |
+| 13 | Honeywell V4043H — 2-Port Zone Valve with Endswitch, 230V, 22mm | 1 | [To Buy](https://www.amazon.co.uk/Honeywell-V4043H-Valve-Normally-Closed/dp/B001ANU6UA) |
 
 **Grundfos UPM3 25-75 130** — A-rated variable-speed circulation pump (230V, 130mm, 1½" BSP) that circulates water through the studio's underfloor heating loops. Controlled by the UH8-N UFH PUMP output (L/E/N terminals) — the UH8-N switches the pump on when Zone 4 (Studio) calls for heat. Mounts directly on the Giacomini R559NY005 mixing group circulator spacer (item 9). Auto-adjusts speed to match system demand, up to 80% more efficient than standard pumps. Ceramic bearing shaft for long, maintenance-free life.
 
 **Honeywell V4043H** — 2-port motorized zone valve (230V, 22mm compression fittings) with built-in endswitch. Installed between the heating boiler pipework and the Giacomini R559NY005 mixing group. Controlled by the UH8-N UFH VALVE output (L/E/N terminals) — opens to allow water flow into the UFH circuit when Zone 4 (Studio) calls for heat. The endswitch is a built-in contact that signals back to the UH8-N when the valve is fully open, preventing the pump from running against a closed valve. Industry standard pairing with Heatmiser UH8-N.
-
-**Heatmiser F-PROBE** — 10k NTC thermistor floor probe that connects to the Studio neoStat RT1/RT2 terminals. 3m cable with sensor tip, embedded in the floor screed between heating loops. Limits floor surface temperature to prevent overheating (typically capped at 27-29C). Set the neoStat sensing mode to "Air + Floor" so it uses both room air temperature and floor temperature to control the UFH zone.
 
 ### Heat Emitters
 
@@ -90,7 +88,11 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 | 18 | Heated Towel Rail — Bathroom 2 | 1 | To Buy |
 | 19 | Manual Thermostatic Radiator Valve (TRV) | 2 | To Buy |
 
-**Panel Radiators** — Standard panel radiators for the three bedrooms. Each connects to one manifold circuit via 16x2mm pipes. Size (height, length, panel type) depends on room heat loss calculations. Flow is controlled by the Giacomini R473X actuators on the manifold — the radiator itself has no valve.
+**Heatmiser TA230** — Thermo-electric actuator (230V, 2W, normally closed, M30x1.5 thread). 2-wire connection (L + N) from UH8-N zone outputs. Mounts on the return side of the R553ZY005 manifold and on the R559NY005 mixing group actuator point (position 14). When the UH8-N sends 230V to a zone output, the actuator heats a wax element that pushes the valve open, allowing water to flow through that circuit. Normally closed means the valve stays shut when power is off — a safety feature that prevents uncontrolled heating. Opening time ~230 seconds. Silent operation, hand-tighten installation. Same Heatmiser ecosystem as UH8-N and neoStat for unified support. With 4 manifold circuits, 8 actuators are needed (2 per circuit for flow + return); the remaining 2 of 10 are spares.
+
+**Heatmiser F-PROBE** — 10k NTC thermistor floor probe that connects to the Studio neoStat RT1/RT2 terminals. 3m cable with sensor tip, embedded in the floor screed between heating loops. Limits floor surface temperature to prevent overheating (typically capped at 27-29C). Set the neoStat sensing mode to "Air + Floor" so it uses both room air temperature and floor temperature to control the UFH zone.
+
+**Panel Radiators** — Standard panel radiators for the three bedrooms. Each connects to one manifold circuit via 16x2mm pipes. Size (height, length, panel type) depends on room heat loss calculations. Flow is controlled by the Heatmiser TA230 actuators on the manifold — the radiator itself has no valve.
 
 **Heated Towel Rails** — Bathroom towel rail radiators for Bathroom 1 and Bathroom 2. Plumbed directly to the heating circuit (not through the manifold). Each towel rail has a manual TRV for local temperature control. Heats whenever the heating boiler is running and the TRV is open.
 
@@ -98,9 +100,7 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 
 **Giacomini R559NY005** — Pre-assembled mixing group that sits between the Ariston Clas ONE System heating boiler and the distribution manifold. Regulates and lowers the water temperature from the boiler before it enters the manifold circuits — essential for underfloor heating which requires lower temperatures (30-45C) than the boiler outputs (60-80C). Includes a 3-way mixing valve, primary and secondary lockshield valves for balancing, delivery temperature probe housing, circulator pump connection point, manual air vents, charge/discharge cocks, and immersion thermometer housings. Connects to boiler supply/return on one side and to the R553Z manifold on the other.
 
-**Giacomini R553ZY005** — Pre-assembled brass distribution manifold with 5 outlet circuits. The supply side has lockshield valves with flow regulation (adjustable with R558 key) to balance water flow between circuits. The return side has thermostatic valve connections where the R473X actuators mount (M30x1.5 thread). 4 of 5 outlets are used (3 bedrooms + 1 studio UFH); the 5th outlet is spare. Bathrooms are not connected to the manifold — they are plumbed directly to the heating circuit with manual TRVs. Adapters R178 or R179 (base 18mm) connect the 16x2mm pipes to the manifold ports.
-
-**Heatmiser TA230** — Thermo-electric actuator (230V, 2W, normally closed, M30x1.5 thread). 2-wire connection (L + N) from UH8-N zone outputs. Mounts on the return side of the R553ZY005 manifold and on the R559NY005 mixing group actuator point (position 14). When the UH8-N sends 230V to a zone output, the actuator heats a wax element that pushes the valve open, allowing water to flow through that circuit. Normally closed means the valve stays shut when power is off — a safety feature that prevents uncontrolled heating. Opening time ~230 seconds. Silent operation, hand-tighten installation. Same Heatmiser ecosystem as UH8-N and neoStat for unified support. With 4 manifold circuits, 8 actuators are needed (2 per circuit for flow + return); the remaining 2 of 10 are spares.
+**Giacomini R553ZY005** — Pre-assembled brass distribution manifold with 5 outlet circuits. The supply side has lockshield valves with flow regulation (adjustable with R558 key) to balance water flow between circuits. The return side has thermostatic valve connections where the Heatmiser TA230 actuators mount (M30x1.5 thread). 4 of 5 outlets are used (3 bedrooms + 1 studio UFH); the 5th outlet is spare. Bathrooms are not connected to the manifold — they are plumbed directly to the heating circuit with manual TRVs. Adapters R178 or R179 (base 18mm) connect the 16x2mm pipes to the manifold ports.
 
 **Giacomini R500Y222** — Flush-mount wall cabinet that houses the R559N mixing group and R553Z manifold assembly. Recessed into the wall for a clean installation. Provides access for maintenance and flow adjustment while keeping the manifold protected and out of sight.
 
