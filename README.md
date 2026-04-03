@@ -1,125 +1,78 @@
-# Heating System Documentation
+# H-MON — Home Heating Monitoring System
 
-## System Overview
+Multi-zone hydronic heating system for a 6-room home, with individual room temperature control via Heatmiser smart thermostats and Giacomini manifold distribution.
 
-This repository contains documentation and monitoring tools for a multi-zone radiator heating system with individual zone control.
+## Rooms
 
-## Hardware Components
+### 1. Bedroom 1 — Radiator
 
-### Boiler
-- **Model**: Ariston Alteas ONE Net 30 kW Combi
-- **Type**: Combination boiler
-- **Connectivity**: BUS BridgeNet protocol (proprietary)
+Primary bedroom with panel radiator. Requires individual temperature control via dedicated thermostat and manifold circuit. One actuator on the manifold controls water flow to the radiator.
 
-### Control Systems
-- **Boiler Controller**: Ariston Cube S Net (WiFi-enabled, controls boiler via BUS)
-- **Wiring Centre**: Heatmiser UH4 (4-zone, 230V, up to 6 actuators per zone)
-- **Room Thermostats**: Heatmiser neoStat v2 (3 units for radiator zones + 1 for UFH zone)
+### 2. Bedroom 2 — Radiator
+
+Second bedroom with panel radiator. Requires individual temperature control via dedicated thermostat and manifold circuit. One actuator on the manifold controls water flow to the radiator.
+
+### 3. Bedroom 3 — Radiator
+
+Third bedroom with panel radiator. Shares a thermostat zone with another room or operates on a fixed schedule. Connected to the manifold via its own circuit and actuator.
+
+### 4. Bathroom 1 — Bath Radiator
+
+Bathroom with towel rail / bath radiator. Shares a thermostat zone with another room. Connected to the manifold via its own circuit and actuator. Requires higher operating temperatures for effective towel drying.
+
+### 5. Bathroom 2 — Bath Radiator
+
+Second bathroom with towel rail / bath radiator. Shares a thermostat zone with another room. Connected to the manifold via its own circuit and actuator. Requires higher operating temperatures for effective towel drying.
+
+### 6. Studio — Underfloor Heating
+
+Open workspace with underfloor heating loops. Requires dedicated thermostat with floor temperature sensor (10k NTC on RT1/RT2 terminals) to prevent floor overheating. Lower water temperature needed — the Giacomini R559NY005 mixing group regulates supply temperature before distribution. UH8-N Zone 8 should be set to UFH mode to enable pump/valve outputs.
+
+## Devices
+
+### Control
+
+| # | Device | Qty | Status |
+|---|--------|-----|--------|
+| 1 | Heatmiser UH8-N — 8 Zone 12V Wiring Centre | 1 | Have |
+| 2 | Heatmiser neoStat 12V V3 — Smart Thermostat | 4 | Have |
+| 3 | Heatmiser neoHub G3 — Smart Hub | 1 | Have |
+
+**Heatmiser UH8-N** — Central wiring hub that connects all thermostats and controls all actuators. Accepts 230V mains input and provides 12V power to up to 8 neoStat thermostats. When a thermostat calls for heat, the UH8-N switches 230V to the corresponding zone actuator on the manifold. Also provides a volt-free boiler enable output (LS/E/LR terminals) to signal the boiler to fire. Has dedicated UFH pump and UFH valve outputs for underfloor heating zones. Zone 8 has a RAD/UFH switch — set to UFH to enable pump and valve control for the studio's underfloor circuit.
+
+**Heatmiser neoStat 12V V3** — Room thermostat powered by 12V from the UH8-N (via +/- terminals). Measures room temperature and sends a call for heat signal (A1/A2 terminals) back to the UH8-N when heating is needed. Supports an optional floor temperature sensor (RT1/RT2 terminals, 10k NTC) for underfloor heating zones to limit floor surface temperature. Communicates wirelessly with the neoHub for smart scheduling, app control, and remote access. 4 units cover the system — some rooms share zones.
+
+**Heatmiser neoHub G3** — Smart hub that connects to all neoStat thermostats wirelessly (mesh network, up to 50m range). Provides smartphone app control, smart scheduling, geolocation-based heating, and voice assistant integration (Alexa, Google Home, HomeKit). Connects to the home network via Ethernet or WiFi. Placed near the router. Enables monitoring and control of all heating zones from anywhere.
 
 ### Distribution
-- **Manifold**: Henco UFH-0605MDSS0X stainless steel manifold with flow meters (4 zones, 0-5 L/min per zone)
-- **Actuators**: Heatmiser TA230 (230V AC, normally closed, 2-wire)
 
-### Heating Output
-- **Radiators**: Stelrad Classic Compact Panel Radiators (3 zones)
-- **Underfloor Heating**: 1 zone with underfloor heating circuits
+| # | Device | Qty | Status |
+|---|--------|-----|--------|
+| 4 | Giacomini R559NY005 — Mixing Group, 5 circuits | 1 | To Buy |
+| 5 | Giacomini R553ZY005 — Brass Manifold, 5 outlets | 1 | To Buy |
+| 6 | Giacomini R473X221 — Thermo-electric Actuator, 230V NC | 10 | To Buy |
+| 7 | Giacomini R500Y222 — Flush-mount Cabinet | 1 | To Buy |
+| 8 | Giacomini R179AM — Pipe Adapters, Base 18 (16x2mm) | 20 | To Buy |
 
-## Zone Configuration
+**Giacomini R559NY005** — Pre-assembled mixing group that sits between the boiler and the distribution manifold. Regulates and lowers the water temperature from the boiler before it enters the manifold circuits — essential for underfloor heating which requires lower temperatures (30-45C) than the boiler outputs (60-80C). Includes a 3-way mixing valve, primary and secondary lockshield valves for balancing, delivery temperature probe housing, circulator pump connection point, manual air vents, charge/discharge cocks, and immersion thermometer housings. Connects to boiler supply/return on one side and to the R553Z manifold on the other.
 
-The system manages 4 independent heating zones:
+**Giacomini R553ZY005** — Pre-assembled brass distribution manifold with 5 outlet circuits. The supply side has lockshield valves with flow regulation (adjustable with R558 key) to balance water flow between circuits. The return side has thermostatic valve connections where the R473X actuators mount (M30x1.5 thread). Each of the 5 outlets feeds one room circuit — radiator or underfloor loop. Adapters R178 or R179 (base 18mm) connect the 16x2mm pipes to the manifold ports.
 
-### Zone 1-3: Radiator Zones (with thermostats)
-Each radiator zone includes:
-- Heatmiser neoStat v2 room thermostat
-- Heatmiser TA230 actuator on manifold
-- Stelrad Classic Compact Panel Radiator
-- Connected to UH4 wiring centre (Zones 1-3)
+**Giacomini R473X221** — Thermo-electric actuator (230V, normally closed). Mounts on the return side of the R553Z manifold via M30x1.5 thread. When the UH8-N sends 230V to a zone output, the actuator heats a wax element that pushes the valve open, allowing water to flow through that circuit. Normally closed means the valve stays shut when power is off — a safety feature that prevents uncontrolled heating. Response time is approximately 3 minutes. 10 units provide 2 per circuit (flow + return) for full isolation, or allow spare capacity for future zone splits.
 
-### Zone 4: Underfloor Heating Zone (with thermostat)
-- Heatmiser neoStat v2 room thermostat
-- Multiple Heatmiser TA230 actuators on manifold (for UFH circuits)
-- Underfloor heating loops
-- Connected to UH4 wiring centre (Zone 4)
+**Giacomini R500Y222** — Flush-mount wall cabinet that houses the R559N mixing group and R553Z manifold assembly. Recessed into the wall for a clean installation. Provides access for maintenance and flow adjustment while keeping the manifold protected and out of sight.
 
-## System Architecture
-
-### Water Distribution
-```
-Ariston Alteas ONE Net Boiler
-    ↓ (hot water supply/return)
-Henco Stainless Steel Manifold (4 zones)
-    ↓ (4 independent circuits)
-TA230 Actuators (mounted on manifold)
-    ↓ (controlled water flow)
-Zone 1-3: Radiators (Stelrad Classic Compact Panel)
-Zone 4: Underfloor Heating Loops
-```
-
-### Electrical Control
-```
-230V AC Mains Supply
-    ↓
-Heatmiser UH4 Wiring Centre (4 zones)
-    ↓
-4x neoStat v2 Thermostats (Zone 1-4)
-    ↓ (switched 230V control via UH4)
-TA230 Actuators (1 per radiator zone, multiple for UFH zone)
-    ↓ (open/close manifold valves)
-Individual zone heating control
-
-Ariston Cube S Net ←→ Boiler (BUS connection)
-    ↑
-UH4 Volt-Free Output (boiler call for heat)
-```
-
-## Wiring Details
-
-### Heatmiser UH4 Wiring Centre
-**Power Supply:**
-- **L** - Live input (230V AC, fused at 5A)
-- **N** - Neutral input
-
-**Zone Connections (4 zones):**
-- **Zone 1-4 Thermostat Inputs**: L, N, Call (from neoStat)
-- **Zone 1-4 Actuator Outputs**: Live and Neutral (230V, 3A max per zone)
-- Each zone can connect up to 6 actuators
-
-**Boiler Control:**
-- **Volt-Free Output**: 2-wire connection to Cube S Net or boiler
-- **Function**: Triggers boiler when any zone calls for heat
-
-**System Connections:**
-- **Pump**: Optional 230V pump control output
-- **Hot Water**: Optional cylinder thermostat input
-
-**Specifications:**
-- Total Load: 5A maximum
-- Dimensions: 384 x 148 x 60mm
-- IP20 protection
-- DIN rail or wall mountable
-
-### Heatmiser neoStat v2 Connections
-- **L** - Live input (230V AC)
-- **N** - Neutral input
-- **Call** - Switched output to UH4 wiring centre
-- **RT1, RT2** - Optional floor sensor (10kΩ NTC, for UFH zone)
-
-### Heatmiser TA230 Actuator
-- **2-Wire Connection**: Live and Neutral from UH4 zone output
-- **Operation**: Normally Closed (NC) - opens when 230V applied
-- **Response Time**: ~3 minutes to fully open
-- **Mounting**: M30 x 1.5 thread on manifold port
-
-### Ariston Cube S Net
-- **Connection**: 2-wire BUS to boiler
-- **Protocol**: BridgeNet (proprietary, not OpenTherm)
-- **Function**: Controls boiler operation based on UH4 call for heat
-- **Connectivity**: WiFi for Ariston NET app
-- **Input from UH4**: Volt-free contacts trigger boiler demand
+**Giacomini R179AM** — Pipe adapters with 18mm base for connecting 16x2mm multilayer (PEX-AL-PEX) pipes to the R553Z manifold outlets. Each manifold circuit needs 2 adapters (supply + return), and with 5 circuits that's 10 minimum — 20 units provide spares for the mixing group connections and any future extensions.
 
 ## Diagrams
 
-### Wiring Diagram
+Editable source files in `diagrams/` — open with [draw.io](https://app.diagrams.net):
+
+- `heating-system.drawio` — Overall system architecture
+- `wiring-diagram.drawio` — Wiring connections (v1)
+- `wiring-diagram-v2.drawio` — Wiring connections (v2, current)
+
+Exported images in `images/`:
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/wiring-diagram.dark.png">
@@ -127,135 +80,10 @@ UH4 Volt-Free Output (boiler call for heat)
   <img alt="Heating System Wiring Diagram" src="images/wiring-diagram.light.png">
 </picture>
 
-### Editable Source Files
+## Documentation
 
-- **heating-system.drawio** - Overall system architecture showing water and electrical connections
-- **wiring-diagram.drawio** - Detailed wiring specifications and terminal connections
+Manufacturer PDFs in `docs/`:
 
-Open these files with [draw.io](https://app.diagrams.net) for viewing and editing.
-
-## Cable Specifications
-
-### Power Supply to UH4 Wiring Centre
-- **Cable Type**: 3-core + earth (Twin & Earth)
-- **Size**: 2.5mm²
-- **Cores**: Live (Brown), Neutral (Blue), Earth (Green/Yellow)
-- **Protection**: 5A fuse or MCB
-- **Standard**: BS 6004 or equivalent
-
-### Thermostats to UH4 Wiring Centre
-- **Cable Type**: 3-core cable
-- **Size**: 0.75mm² to 1.5mm²
-- **Cores**:
-  - Wire 1: Live (L)
-  - Wire 2: Neutral (N)
-  - Wire 3: Call/Switched Live
-- **Max Length**: Up to 50m
-
-### UH4 to Actuators
-- **Cable Type**: 2-core cable
-- **Size**: 0.75mm² to 1.5mm²
-- **Cores**: Live and Neutral (230V zone output)
-- **Max Length**: Up to 50m
-- **Load**: 2W per actuator, max 6 actuators per zone
-
-### UH4 to Boiler (Volt-Free)
-- **Cable Type**: 2-core cable
-- **Size**: 0.5mm² to 1.0mm²
-- **Connection**: Volt-free contacts to Cube S Net input
-- **Max Length**: Up to 100m (low voltage signal)
-
-### Recommended Cable Setup
-```
-Mains 230V Supply
-    ↓ (2.5mm² Twin & Earth, 5A fused)
-Heatmiser UH4 Wiring Centre
-    ├─ (0.75-1.5mm² 3-core) → 4x neoStat v2 Thermostats
-    ├─ (0.75-1.5mm² 2-core) → TA230 Actuators (4 zones)
-    └─ (0.5-1.0mm² 2-core) → Ariston Cube S Net (volt-free)
-```
-
-## Important Notes
-
-⚠️ **Safety and Installation**
-- All electrical work must be performed by a qualified electrician
-- System operates on 230V AC - disconnect power before any work
-- Actuators are normally closed - valves close when power is removed
-- Each thermostat requires dedicated 230V supply (L + N)
-- All installations must comply with local electrical regulations
-- Always connect earth to thermostat backplate
-- Keep low voltage and mains cables separated
-
-**System Operation**
-- Room thermostats (neoStat v2) independently control their zones
-- When thermostat calls for heat, it sends signal to UH4 wiring centre
-- UH4 provides 230V to zone actuator(s), opening manifold valve
-- Hot water flows to radiator (Zones 1-3) or UFH loops (Zone 4)
-- UH4 volt-free output signals Cube S Net to activate boiler
-- Cube S Net manages overall boiler operation via BridgeNet protocol
-
-## System Optimization Recommendations
-
-### Priority 1: High Impact Improvements
-
-#### 1. Floor Temperature Sensors
-**For rooms with tile/stone floors:**
-- Connects to neoStat RT1/RT2 terminals
-- 10kΩ NTC thermistor sensors
-- Prevents floor overheating
-- Improves temperature regulation
-
-**Cost:** £60-100 (4 sensors) | **Annual Savings:** £40-60 | **Payback:** 2 years
-
-### Priority 2: Optional Improvements
-
-#### 2. Smart Hub Integration (Optional)
-**Heatmiser neoHub Gen 2:**
-- Centralized control of all neoStat thermostats via smartphone app
-- Smart scheduling, geo-location, and remote access
-- Voice control (Alexa, Google Home, HomeKit)
-- Energy monitoring and usage tracking per room
-- **Requirements**: Ethernet or WiFi connection, USB 5V power (PoE not supported)
-- **Placement**: Near router, within 50m of at least one neoStat (mesh networking extends range)
-- **Cost**: £120-150
-
-**Cost:** £120-150 | **Annual Savings:** £100-200 | **Payback:** 1-2 years
-
-#### 3. Wiring Centre Consolidation
-**Alternative to direct wiring:** Heatmiser UH8 Wiring Centre
-- Centralizes all wiring in one location
-- Easier troubleshooting and maintenance
-- Cleaner cable management
-- Built-in pump control
-
-**Cost:** £180-220 | **Benefit:** Convenience, not energy savings
-
-#### 4. Boiler Optimization
-**Settings to Check:**
-- **CH Temperature**: Set to 60-70°C for radiators (not 80°C+)
-- **Pump Speed**: Adjust based on system resistance
-- **Weather Compensation**: Enable if available (10-15% savings)
-- **Anti-Cycling**: Set minimum run times
-
-## Optimization Action Plan
-
-### Immediate (Do Now)
-1. ✅ **Optimize boiler settings** (temperature, pump speed)
-2. ✅ **Balance manifold** flow rates using built-in flow meters
-
-### Short Term (1-3 months)
-3. ⚙️ Install floor sensors (if tile/stone floors)
-
-### Long Term (Future)
-4. 🔧 Consider smart hub integration for remote control
-5. 🔧 Consider wiring centre during major rewiring
-6. 💰 Monitor and optimize based on usage data
-
-## Cost-Benefit Summary
-
-| Upgrade | Cost | Annual Savings | Payback Period | Priority |
-|---------|------|----------------|----------------|----------|
-| Floor Sensors | £60-100 | £40-60 | 2 years | **HIGH** |
-| Boiler Optimization | £0 | £50-100 | Immediate | **HIGH** |
-| Smart Hub (neoHub) | £120-150 | £100-200 | 1-2 years | Medium |
-| Wiring Centre | £180-220 | N/A | N/A | Low |
+- `uh8-n-manual.pdf` — Heatmiser UH8-N installation manual and wiring diagrams
+- `R559N-1.pdf` — Giacomini R559NY mixing group instructions and flow scheme
+- `R553D.pdf` — Giacomini R553Z manifold technical sheet and regulation guide
