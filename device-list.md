@@ -12,8 +12,8 @@
 | 8 | Giacomini | R473X221 — Thermo-electric actuator, 230V NC | 10 | To Buy |
 | 9 | Giacomini | R500Y222 — Flush-mount cabinet | 1 | To Buy |
 | 10 | Giacomini | R179AM — Pipe adapters, Base 18 (16×2mm) | 20 | To Buy |
-| 11 | — | UFH Circulation Pump, 230V | 1 | To Buy |
-| 12 | — | UFH Zone Valve with Endswitch, 230V | 1 | To Buy |
+| 11 | Grundfos | UPM3 25-75 130 — UFH Circulation Pump, 230V | 1 | [To Buy](https://product-selection.grundfos.com/us/products/upm3-upm4-oem/upm3-oem/upm3-59C90802) |
+| 12 | Honeywell | V4043H — 2-Port Zone Valve with Endswitch, 230V, 22mm | 1 | [To Buy](https://www.amazon.co.uk/Honeywell-V4043H-Valve-Normally-Closed/dp/B001ANU6UA) |
 | 13 | Heatmiser | F-PROBE — Floor Temperature Sensor, 10k NTC | 1 | To Buy |
 | 14 | — | Panel Radiator — Bedroom 1 | 1 | To Buy |
 | 15 | — | Panel Radiator — Bedroom 2 | 1 | To Buy |

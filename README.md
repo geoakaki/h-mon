@@ -69,13 +69,13 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 
 | # | Device | Qty | Status |
 |---|--------|-----|--------|
-| 11 | UFH Circulation Pump (230V) | 1 | To Buy |
-| 12 | UFH Zone Valve with Endswitch (230V) | 1 | To Buy |
+| 11 | Grundfos UPM3 25-75 130 — UFH Circulation Pump, 230V | 1 | To Buy |
+| 12 | Honeywell V4043H — 2-Port Zone Valve with Endswitch, 230V, 22mm | 1 | To Buy |
 | 13 | Heatmiser F-PROBE — Floor Temperature Sensor, 10k NTC | 1 | To Buy |
 
-**UFH Circulation Pump** — 230V pump that circulates water through the studio's underfloor heating loops. Controlled by the UH8-N UFH PUMP output (L/E/N terminals) — the UH8-N switches the pump on when Zone 4 (Studio) calls for heat. Mounts on the Giacomini R559NY005 mixing group circulator connection point. Should be a variable-speed pump sized for the UFH circuit flow rate.
+**Grundfos UPM3 25-75 130** — A-rated variable-speed circulation pump (230V, 130mm, 1½" BSP) that circulates water through the studio's underfloor heating loops. Controlled by the UH8-N UFH PUMP output (L/E/N terminals) — the UH8-N switches the pump on when Zone 4 (Studio) calls for heat. Mounts directly on the Giacomini R559NY005 mixing group circulator spacer (item 9). Auto-adjusts speed to match system demand, up to 80% more efficient than standard pumps. Ceramic bearing shaft for long, maintenance-free life.
 
-**UFH Zone Valve with Endswitch** — 230V motorized zone valve that opens to allow water flow into the UFH circuit. Controlled by the UH8-N UFH VALVE output (L/E/N terminals). The endswitch is a built-in contact that signals back to the UH8-N when the valve is fully open — this prevents the pump from running before the valve is ready. Normally closed for safety.
+**Honeywell V4043H** — 2-port motorized zone valve (230V, 22mm compression fittings) with built-in endswitch. Installed between the heating boiler pipework and the Giacomini R559NY005 mixing group. Controlled by the UH8-N UFH VALVE output (L/E/N terminals) — opens to allow water flow into the UFH circuit when Zone 4 (Studio) calls for heat. The endswitch is a built-in contact that signals back to the UH8-N when the valve is fully open, preventing the pump from running against a closed valve. Industry standard pairing with Heatmiser UH8-N.
 
 **Heatmiser F-PROBE** — 10k NTC thermistor floor probe that connects to the Studio neoStat RT1/RT2 terminals. 3m cable with sensor tip, embedded in the floor screed between heating loops. Limits floor surface temperature to prevent overheating (typically capped at 27-29C). Set the neoStat sensing mode to "Air + Floor" so it uses both room air temperature and floor temperature to control the UFH zone.
 
