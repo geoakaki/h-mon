@@ -9,7 +9,7 @@
 | 5 | Heatmiser | neoHub G3 | 1 | Have |
 | 6 | Giacomini | R559NY005 — Pre-assembled manifold group, 5 circuits | 1 | To Buy |
 | 7 | Giacomini | R553ZY005 — Pre-assembled brass manifold, 5 outlets | 1 | To Buy |
-| 8 | Giacomini | R473X221 — Thermo-electric actuator, 230V NC | 10 | To Buy |
+| 8 | Heatmiser | TA230 — Thermo-electric actuator, 230V NC, M30x1.5 | 10 | [To Buy](https://heatmisershop.co.uk/underfloor-heating-actuator-heatmiser-ta230/) |
 | 9 | Giacomini | R500Y222 — Flush-mount cabinet | 1 | To Buy |
 | 10 | Giacomini | R179AM — Pipe adapters, Base 18 (16×2mm) | 20 | To Buy |
 | 11 | Grundfos | UPM3 25-75 130 — UFH Circulation Pump, 230V | 1 | [To Buy](https://product-selection.grundfos.com/us/products/upm3-upm4-oem/upm3-oem/upm3-59C90802) |

@@ -9,7 +9,7 @@ Documentation repo for a 6-room home heating system. No application code — onl
 **Boilers:** Ariston Clas ONE System 24 kW (heating only) + Ariston Clas ONE Combi 24 kW (DHW only, no cylinder)
 **Control:** Heatmiser UH8-N (8-zone, 12V) + neoHub G3 + 4x neoStat 12V V3
 **Distribution:** Giacomini R559NY005 manifold group + R553ZY005 brass manifold (5 outlets, 4 used)
-**Actuators:** Giacomini R473X221 (230V NC thermo-electric) x10
+**Actuators:** Heatmiser TA230 (230V NC thermo-electric, M30x1.5) x10
 **Wiring diagram:** "UH8-N – neoStat-12v and Hot Water Zone" from UH8-N manual
 
 ## Rooms (6 total, 4 on manifold + 2 direct-plumbed)

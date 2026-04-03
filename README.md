@@ -61,7 +61,7 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 |---|--------|-----|--------|
 | 6 | Giacomini R559NY005 — Mixing Group, 5 circuits | 1 | To Buy |
 | 7 | Giacomini R553ZY005 — Brass Manifold, 5 outlets | 1 | To Buy |
-| 8 | Giacomini R473X221 — Thermo-electric Actuator, 230V NC | 10 | To Buy |
+| 8 | Heatmiser TA230 — Thermo-electric Actuator, 230V NC, M30x1.5 | 10 | To Buy |
 | 9 | Giacomini R500Y222 — Flush-mount Cabinet | 1 | To Buy |
 | 10 | Giacomini R179AM — Pipe Adapters, Base 18 (16x2mm) | 20 | To Buy |
 
@@ -100,7 +100,7 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 
 **Giacomini R553ZY005** — Pre-assembled brass distribution manifold with 5 outlet circuits. The supply side has lockshield valves with flow regulation (adjustable with R558 key) to balance water flow between circuits. The return side has thermostatic valve connections where the R473X actuators mount (M30x1.5 thread). 4 of 5 outlets are used (3 bedrooms + 1 studio UFH); the 5th outlet is spare. Bathrooms are not connected to the manifold — they are plumbed directly to the heating circuit with manual TRVs. Adapters R178 or R179 (base 18mm) connect the 16x2mm pipes to the manifold ports.
 
-**Giacomini R473X221** — Thermo-electric actuator (230V, normally closed). Mounts on the return side of the R553Z manifold via M30x1.5 thread. When the UH8-N sends 230V to a zone output, the actuator heats a wax element that pushes the valve open, allowing water to flow through that circuit. Normally closed means the valve stays shut when power is off — a safety feature that prevents uncontrolled heating. Response time is approximately 3 minutes. With 4 manifold circuits, 8 actuators are needed (2 per circuit for flow + return); the remaining 2 of 10 are spares.
+**Heatmiser TA230** — Thermo-electric actuator (230V, 2W, normally closed, M30x1.5 thread). 2-wire connection (L + N) from UH8-N zone outputs. Mounts on the return side of the R553ZY005 manifold and on the R559NY005 mixing group actuator point (position 14). When the UH8-N sends 230V to a zone output, the actuator heats a wax element that pushes the valve open, allowing water to flow through that circuit. Normally closed means the valve stays shut when power is off — a safety feature that prevents uncontrolled heating. Opening time ~230 seconds. Silent operation, hand-tighten installation. Same Heatmiser ecosystem as UH8-N and neoStat for unified support. With 4 manifold circuits, 8 actuators are needed (2 per circuit for flow + return); the remaining 2 of 10 are spares.
 
 **Giacomini R500Y222** — Flush-mount wall cabinet that houses the R559N mixing group and R553Z manifold assembly. Recessed into the wall for a clean installation. Provides access for maintenance and flow adjustment while keeping the manifold protected and out of sight.
 
