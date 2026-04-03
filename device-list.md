@@ -12,3 +12,12 @@
 | 8 | Giacomini | R473X221 — Thermo-electric actuator, 230V NC | 10 | To Buy |
 | 9 | Giacomini | R500Y222 — Flush-mount cabinet | 1 | To Buy |
 | 10 | Giacomini | R179AM — Pipe adapters, Base 18 (16×2mm) | 20 | To Buy |
+| 11 | — | UFH Circulation Pump, 230V | 1 | To Buy |
+| 12 | — | UFH Zone Valve with Endswitch, 230V | 1 | To Buy |
+| 13 | Heatmiser | F-PROBE — Floor Temperature Sensor, 10k NTC | 1 | To Buy |
+| 14 | — | Panel Radiator — Bedroom 1 | 1 | To Buy |
+| 15 | — | Panel Radiator — Bedroom 2 | 1 | To Buy |
+| 16 | — | Panel Radiator — Bedroom 3 | 1 | To Buy |
+| 17 | — | Heated Towel Rail — Bathroom 1 | 1 | To Buy |
+| 18 | — | Heated Towel Rail — Bathroom 2 | 1 | To Buy |
+| 19 | — | Manual Thermostatic Radiator Valve (TRV) | 2 | To Buy |
