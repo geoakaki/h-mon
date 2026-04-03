@@ -91,6 +91,23 @@ Exported images in `images/`:
   <img alt="Heating System Wiring Diagram" src="images/wiring-diagram.light.png">
 </picture>
 
+## UH8-N Wiring Diagram Version
+
+The UH8-N manual includes four wiring configurations. The correct one for this system is marked below:
+
+| Diagram | Description | For This System? |
+|---------|-------------|-----------------|
+| UH8-N – Slimline-N and Hot Water Zone | Slimline-N thermostats with hot water cylinder control | No — we use neoStat 12V, not Slimline-N |
+| UH8-N – neoStat-12v and Radiator Zone | neoStat 12V thermostats, heating only, no hot water zone | No — we have a separate DHW boiler that needs the H Water zone |
+| **UH8-N – neoStat-12v and Hot Water Zone** | **neoStat 12V thermostats with radiator, UFH, and hot water zones** | **Yes — matches our setup** |
+| Wiring Diagram – Connecting Multiple UH8-N's | Linking two or more UH8-N units together | No — we have a single UH8-N with 8 zones |
+
+**Why "neoStat-12v and Hot Water Zone":**
+- We use **neoStat 12V V3** thermostats (not Slimline-N)
+- We have **two boilers** — the heating boiler connects to UH8-N Heat Enable, and the DHW combi boiler can be wired to the H Water zone for on/off scheduling via neoHub
+- We have both **radiator zones** (bedrooms, bathrooms) and a **UFH zone** (studio)
+- We only need **one UH8-N** — 8 zones is enough for 6 rooms
+
 ## Documentation
 
 Manufacturer PDFs in `docs/`:
