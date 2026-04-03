@@ -86,7 +86,6 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 | 16 | Panel Radiator — Bedroom 3 | 1 | To Buy |
 | 17 | Heated Towel Rail — Bathroom 1 | 1 | To Buy |
 | 18 | Heated Towel Rail — Bathroom 2 | 1 | To Buy |
-| 19 | Manual Thermostatic Radiator Valve (TRV) | 2 | To Buy |
 
 **Heatmiser TA230** — Thermo-electric actuator (230V, 2W, normally closed, M30x1.5 thread). 2-wire connection (L + N) from UH8-N zone outputs. Mounts on the return side of the R553ZY005 manifold and on the R559NY005 mixing group actuator point (position 14). When the UH8-N sends 230V to a zone output, the actuator heats a wax element that pushes the valve open, allowing water to flow through that circuit. Normally closed means the valve stays shut when power is off — a safety feature that prevents uncontrolled heating. Opening time ~230 seconds. Silent operation, hand-tighten installation. Same Heatmiser ecosystem as UH8-N and neoStat for unified support. With 4 manifold circuits, 8 actuators are needed (2 per circuit for flow + return); the remaining 2 of 10 are spares.
 
@@ -96,7 +95,6 @@ Open workspace with underfloor heating loops. Requires dedicated thermostat with
 
 **Heated Towel Rails** — Bathroom towel rail radiators for Bathroom 1 and Bathroom 2. Plumbed directly to the heating circuit (not through the manifold). Each towel rail has a manual TRV for local temperature control. Heats whenever the heating boiler is running and the TRV is open.
 
-**Manual Thermostatic Radiator Valves (TRV)** — One per bathroom towel rail. Mounts directly on the towel rail inlet. Contains a wax capsule that expands/contracts with temperature — automatically opens and closes the valve to maintain the set temperature. No electricity, no wiring. Typically set to 3-4 (approx 20-22C) for bathrooms.
 
 **Giacomini R559NY005** — Pre-assembled mixing group that sits between the Ariston Clas ONE System heating boiler and the distribution manifold. Regulates and lowers the water temperature from the boiler before it enters the manifold circuits — essential for underfloor heating which requires lower temperatures (30-45C) than the boiler outputs (60-80C). Includes a 3-way mixing valve, primary and secondary lockshield valves for balancing, delivery temperature probe housing, circulator pump connection point, manual air vents, charge/discharge cocks, and immersion thermometer housings. Connects to boiler supply/return on one side and to the R553Z manifold on the other.
 

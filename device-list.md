@@ -20,4 +20,4 @@
 | 16 | — | Panel Radiator — Bedroom 3 | 1 | To Buy |
 | 17 | — | Heated Towel Rail — Bathroom 1 | 1 | To Buy |
 | 18 | — | Heated Towel Rail — Bathroom 2 | 1 | To Buy |
-| 19 | — | Manual Thermostatic Radiator Valve (TRV) | 2 | To Buy |
+
